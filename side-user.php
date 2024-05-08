@@ -59,13 +59,13 @@ class P2P_Side_User extends P2P_Side {
 	}
 
 	function do_query( $args ) {
-		return new WP_User_Query( $args );
+		return new P2P_User_Query( $args );
 	}
 
 	function capture_query( $args ) {
 		$args['count_total'] = false;
 
-		$uq = new WP_User_Query;
+		$uq = new P2P_User_Query;
 		$uq->_p2p_capture = true; // needed by P2P_URL_Query
 
 		$uq->prepare_query( $args );
